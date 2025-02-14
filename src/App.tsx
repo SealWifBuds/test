@@ -1,7 +1,6 @@
 import { createAppKit } from '@reown/appkit/react'
 import { WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Text } from './components/Text'
 import { projectId, metadata, networks, wagmiAdapter } from './config'
 
 import "./App.css"
@@ -36,7 +35,6 @@ export function App() {
         </h1>
         <p><img src="/logo.png" alt="Logo" style={{ width: '200px', height: '200px' }} /></p>
         <br/>
-        <Text/>
         <WagmiProvider config={wagmiAdapter.wagmiConfig}>
           <QueryClientProvider client={queryClient}>
             <appkit-button/>
