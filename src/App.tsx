@@ -1,32 +1,5 @@
-import { createAppKit } from '@reown/appkit/react'
-import { WagmiProvider } from 'wagmi'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Connected } from './components/Connected'
-import { Text } from './components/Text'
-import { projectId, metadata, networks, wagmiAdapter } from './config'
-
 import "./App.css"
 
-const queryClient = new QueryClient()
-
-const generalConfig = {
-  projectId,
-  networks,
-  metadata,
-  themeMode: 'dark' as const,
-  themeVariables: {
-    '--w3m-accent': '#0d76fc',
-  }
-}
-
-// Create modal
-createAppKit({
-  adapters: [wagmiAdapter],
-  ...generalConfig,
-  features: {
-    analytics: true // Optional - defaults to your Cloud configuration
-  }
-})
 
 export function App() {
   return (
